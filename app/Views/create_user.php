@@ -33,8 +33,18 @@
                                                 <label for="npm">NPM</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="kelas" id="kelas" type="text" placeholder="kelas" />
+                                                <select class="form-control" name="kelas" id="kelas" type="text" placeholder="kelas" />
                                                 <label for="kelas">Kelas</label>
+                                                <?php
+                                                foreach ($kelas as $item){
+                                                    ?>
+                                                    <option values="<?= $item['id'] ?>">
+                                                    <?= $item['nama_kelas'] ?>
+                                                </option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary" name="submit" >Submit</button>
