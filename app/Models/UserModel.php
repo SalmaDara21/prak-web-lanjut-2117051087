@@ -39,6 +39,9 @@ class UserModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function getUser(){
+        return $this->join('kelas', 'kelas.id=user.id_kelas')->findAll();
+    }
     public function saveUser($data){
         $this->insert($data);
     }
