@@ -25,10 +25,11 @@ class UserController extends BaseController{
     }
 
     public function profile($nama = '', $kelas = '', $npm = ''){
+       // session();
         $data = [
             'nama' => $nama,
             'kelas' => $kelas,
-            'npm' => $npm,
+            'npm' => $npm
         ];
         return view('profile', $data);
     }
@@ -44,6 +45,7 @@ class UserController extends BaseController{
         $data = [
             'tittle' => 'Create User',
             'kelas' => $kelas,
+            'validation' => $validation
         ];
         return view('create_user', $data);
     }

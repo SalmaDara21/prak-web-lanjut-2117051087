@@ -18,23 +18,31 @@
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Input Form</h3></div>
+
+                                    
+
                                     <div class="card-body">
                                     <form action="<?= base_url('/user/store') ?>" method="POST">
+                                            
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="nama" id="nama" type="text" placeholder="nama" />
+                                                <input class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid': ''; ?>" name="nama"  id="nama" type="text" placeholder="nama" />
                                                 <label for="nama">Nama</label>
+                                                <div class="invalid-feedback">
+                                                    <?= $validation->getError('nama'); ?>
+                                                </div>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="npm" id="npm" type="number" placeholder="npm" />
                                                 <label for="npm">NPM</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <select class="form-control" name="kelas" id="kelas" type="text" placeholder="kelas" />
+                                            
+                                                <select class="form-select" name="kelas" id="kelas" >
                                                 <label for="kelas">Kelas</label>
                                                 <?php
                                                 foreach ($kelas as $item){
                                                     ?>
-                                                    <option values="<?= $item['id'] ?>">
+                                                    <option value="<?= $item['id'] ?>">
                                                     <?= $item['nama_kelas'] ?>
                                                 </option>
                                                 <?php
