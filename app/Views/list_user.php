@@ -9,6 +9,7 @@
      
         <div class="sipbi valign-text-bottom">Praktikum Web Lanjut</div>
     </div>
+    <a href="/user/create">Tambah Data</a>
     <div class= "main">
     <table class="table">
         <thead>
@@ -29,8 +30,10 @@
                 <td><?= $user['nama'] ?></td>
                 <td><?= $user['npm'] ?></td>
                 <td><?= $user['nama_kelas'] ?></td>
-                <td><button type="button" class="btn btn-info">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <td>
+                <a href="<?= base_url('user/' . $user['id']) ?>" class="btn btn-primary">Detail </a>
+                <a href="" type="button" class="btn btn-info">Edit</a>
+                <a  href="" type="button" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         <?php
