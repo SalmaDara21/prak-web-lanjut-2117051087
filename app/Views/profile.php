@@ -3,23 +3,22 @@
 <?= $this->section('content') ?>
 <body>
 <div class="main">
-<center><img src="<?php echo base_url('assets/img/salma.jpeg'); ?>" class="rounded" width="250px"></center>
+<center><img src="<?= $user['foto'] ?? '<default-foto>' ?>" class="rounded" width="250px"></center>
 <div class="container">
-        <div class="card" data-tilt>
-        <!-- <img src="<?php echo base_url('assets/img/salma.jpeg'); ?>"> -->
+        <div class="card" data-tilt> 
 
             <h2>Profile</h2>
             <br>
             <tr>
-                <td><?=$nama?></td>
+                <td><div class="..."><?= $user['nama'] ?></div></td>
             </tr>
             <br>
             <tr>
-            <td><?=$kelas?></td>
+            <td><div class="..."><?= $user['nama_kelas'] ?></div></td>
             </tr>
             <br>
             <tr>
-            <td><?=$npm?></td>
+            <td><div class="..."><?= $user['npm'] ?></div></td>
             </tr>
 </div>
 </body>

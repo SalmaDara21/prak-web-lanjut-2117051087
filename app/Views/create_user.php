@@ -22,7 +22,7 @@
                                     
 
                                     <div class="card-body">
-                                    <form action="<?= base_url('/user/store') ?>" method="POST">
+                                    <form action="<?= base_url('/user/store') ?>" method="POST" enctype="multipart/form-data" >
                                             
                                             <div class="form-floating mb-3">
                                                 <input class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid': ''; ?>" name="nama"  id="nama" type="text" placeholder="nama" />
@@ -49,6 +49,9 @@
                                                 }
                                                 ?>
                                             </select>
+                                            </div>
+                                            <label class="input-group mb-3" for="foto">Upload Foto</label>
+                                            <input type="file" class="form-control" name='foto' id="foto">
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary" name="submit" >Submit</button>
