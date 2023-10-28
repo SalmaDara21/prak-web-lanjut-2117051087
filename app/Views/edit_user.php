@@ -22,17 +22,19 @@
                                     
 
                                     <div class="card-body">
-                                    <form action="<?= base_url('/user/store') ?>" method="POST" enctype="multipart/form-data" >
+                                    <form action="<?= base_url('/user/' . $user['id']) ?>" method="POST" enctype="multipart/form-data" >
+                                    <?= csrf_field() ?>
+                                    <input type="hidden" name="_method" value="PUT">
+                                    <img src="<?= $user['foto'] ?? 'default-foto>' ?>" class="rounded" width="250px">
+                                    <input type="file" name="foto" id="foto">
                                             
                                             <div class="form-floating mb-3">
-                                                <input class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid': ''; ?>" name="nama"  id="nama" type="text" placeholder="nama" />
-                                                <label for="nama">Nama</label>
-                                                <div class="invalid-feedback">
-                                                    <?= $validation->getError('nama'); ?>
-                                                </div>
+                                                <input class="form-control" name="nama"  id="nama" type="text" placeholder="nama" value="<?= $user['nama'] ?>" />
+                                                <label for="nama" >Nama</label>
+                                                
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="npm" id="npm" type="number" placeholder="npm" />
+                                                <input class="form-control" name="npm" id="npm" type="number" placeholder="npm" value="<?= $user['npm'] ?>" />
                                                 <label for="npm">NPM</label>
                                             </div>
                                             <div class="form-floating mb-3">
@@ -42,17 +44,17 @@
                                                 <?php
                                                 foreach ($kelas as $item){
                                                     ?>
-                                                    <option value="<?= $item['id'] ?>">
+                                                    <option value="<?= $item['id'] ?>" <?= $user['id_kelas'] == $item['id'] ? 'selected' : '' ?> >
                                                     <?= $item['nama_kelas'] ?>
                                                 </option>
                                                 <?php
                                                 }
                                                 ?>
                                             </select>
-                                            </div>
+                                            <!-- </div>
                                             <label class="input-group mb-3" for="foto">Upload Foto</label>
                                             <input type="file" class="form-control" name='foto' id="foto">
-                                            </div>
+                                            </div> -->
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary" name="submit" >Submit</button>
                                             </div>
