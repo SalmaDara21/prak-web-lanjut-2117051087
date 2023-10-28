@@ -91,6 +91,35 @@
   }
 }
 
+.menu{
+  width:  400px;
+  float: left;
+  height: 70px;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li{
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 18px;
+}
+ul li a
+{
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #ffead8;
+  border-radius: 20px;
+}
+ul li a:hover
+{
+  background: #df65a2;
+  color: #2b1055;
+}
+
 .bg{
   background-image: url("/assets/img/bg.jpg");
 }

@@ -5,12 +5,28 @@
 <body>
     <div class="login-ladmin screen">
         <div class="overlap-group4">
-        <div class="rectangle-2"></div>
-     
-        <div class="sipbi valign-text-bottom">Praktikum Web Lanjut</div>
+        <div class="rectangle-2">
+        </div>
+
+        <div class="sipbi valign-text-bottom">
+        <div class="menu">
+                    <ul>
+                    <p>Praktikum Web Lanjut<p>
+                        <li><a href="/user/create">Tambah Data</a></li>
+                        <li><a href="/kelas">List Kelas</a></li>
+                    </ul>
+        </div>
+        </div>
     </div>
-    <a href="/user/create">Tambah Data</a>
     <div class= "main">
+        
+    <!-- <div class= "btn-edit">
+        <a href="/user/create" button type="submit" class="btn btn-primary">Tambah Data</a>
+        </div>
+        <div class= "btn-edit">
+        <a href="/user/kelas" button type="submit" class="btn btn-primary">List Kelas</a>
+    </div> -->
+
     <table class="table">
         <thead>
             <tr class="table-danger">
