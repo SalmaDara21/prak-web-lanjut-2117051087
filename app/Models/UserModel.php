@@ -58,4 +58,16 @@ class UserModel extends Model
     public function deleteUser($id){
         return $this->delete($id);
     }
+
+    public function getUserKelas($kelasId = null) {
+        $builder = $this->select('user.*, kelas.nama_kelas')
+            ->join('kelas', 'kelas.id=user.id_kelas');
+        
+        if ($kelasId !== null) {
+            $builder->where('kelas.id', $kelasId);
+        }
+        
+        return $builder->findAll();
+    }
+    
 }

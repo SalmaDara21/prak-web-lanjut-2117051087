@@ -137,4 +137,14 @@ class UserController extends BaseController{
         return redirect()->to(base_url('/user'))
         ->with('success', 'Berhasil Menghapus Data');
     }
+
+    // public function getKelas($id_kelas){
+    //     $user = $this->userModel->getUserKelas($id_kelas);
+    //     $data = [
+    //         'title' => 'Profile',
+    //         'user'  => $user,
+    //     ];
+    //     return view('list_kelas', $data);
+    // }
+
 }
